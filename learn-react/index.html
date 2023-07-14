@@ -1,77 +1,11 @@
+<!DOCTYPE html>
 <html>
-<head>
-    
-    <title>Document</title>
-</head>
-<body>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
-    <div id="root"></div>
-    <script type="text/babel">
-        
-        const Button = () => {
-            const [op1, setOp1] = React.useState(Math.ceil(Math.random() * 9));
-            const [op2, setOp2] = React.useState(Math.ceil(Math.random() * 9));
-            const [value, setValue] = React.useState('');
-            const [result, setResult] = React.useState(''); 
-            const f1 = React.useRef();
-            //const input = '';
-
-            const check = () => {
-                if (op1 * op2 === parseInt(value)) {
-                    setResult(value + ' 정답!');
-                    setOp1(Math.ceil(Math.random() * 9));
-                    setOp2(Math.ceil(Math.random() * 9));
-                } else {
-                    setResult(value + ' 땡');
-                }
-                setValue('');
-                f1.current.focus();
-            }
-            
-            return (
-                <div>
-                <p>{op1} 곱하기 {op2}는?</p>
-                <input ref={f1}type="number" value={value} onChange={(e) => {setValue(e.target.value)}}/>
-                <button onClick={check}>    
-                    입력
-                </button>
-                <p>{result}</p>
-                </div>
-            );
-        }
-        const Flip = () => {
-            const [fliped, setFliped] = React.useState(false);
-            const [value1, setValue1] = React.useState('');
-            const ref1 = React.useRef();
-            const ref2 = React.useRef();
-            const fliping = () => {
-                console.log(fliped);
-                console.log(ref1);
-                console.log(ref2);
-                setFliped((c) => !c);
-                console.log(fliped);
-                if (fliped) {
-                    ref1.current.focus();
-                } else {
-                    ref2.current.focus();
-                }
-        
-            }
-            
-            return (
-                <div>
-                <input ref={ref1} value={value1} onChange={(e) => setValue1(e.target.value)} type="number" disabled={!fliped}/>
-                <input ref={ref2} type="number" placeholder="2" disabled={fliped}/>
-                <button onClick={fliping}>
-                    flip
-                </button>
-                </div>
-            );
-        }
-        ReactDOM.createRoot(document.querySelector('#root')).render(<div><Button/></div>);
-
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>index</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="./dist/app.js"></script>
+    </body>
 </html>
