@@ -1,9 +1,13 @@
 .blue {
-    color: blue;
+    color: rgb(0,0,255);;
 }
 .green {
-    color: green;
+    color:#3ebf3e;
 }
 .silver {
     color: silver;
+}
+
+#backimg {
+    background-image:url('./images/oldtimer-1582375.jpg');background-repeat: no-repeat;
 }
