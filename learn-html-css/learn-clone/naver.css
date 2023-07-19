@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+.body-center {
+    margin: 0 auto;
+    width: 1080px;
+}
+#header-search h1 {
+    width: 198px;
+    height: 48px;
+    background-image: url(./sp_search.png);
+    background-position: -4px -8px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+a {
+    text-decoration: none;
+}
+
+#header-search fieldset {
+    margin-left: 20px;
+    width: 520px;
+    height: 49px;
+    padding: 12px 0 12px 10px;
+    border: 2px solid #03cf5d;
+    position: relative;
+    /*overflow: hidden;*/
+    vertical-align: middle;
+}
+#header-search fieldset input{
+    width: 405px;
+    height: 23px;
+    border: none;
+    padding: 0px;
+    outline: none;
+}
+.inline {
+    display: inline-block;
+}
+
+.blind {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+#header-search fieldset button {
+    width: 49px;
+    height: 49px;
+    border: none;
+    padding: 0; 
+    background-color: #03cf5d;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#search-image {
+    width: 21px;
+    height: 21px;
+    background: url(sp_search.png) -3px -60px no-repeat;
+    display: inline-block;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav ul > li {
+    display: inline-block;
+}
+nav span:nth-of-type(2n) {
+    display: inline-block;
+    height:  16px;
+    margin-left: 14px;
+}
+#nav-mail {
+    width: 25px;
+    background: url(sp_nav.png) 0px -284px no-repeat;
+    margin-left: 0;
+}
+
+#nav-cafe {
+    width: 27px;   
+    background: url(sp_nav.png) -279px -52px no-repeat;
+}
+
+#nav-blog {
+    width: 40px;   
+    background: url(sp_nav.png) -100px -182px no-repeat;
+}
+#nav-intel {
+    width: 40px;   
+    background: url(sp_nav.png) -101px -156px no-repeat;
+}
+#nav-shopping {
+    width: 26px;   
+    background: url(sp_nav.png) -279px -156px no-repeat;
+}
+#nav-naverpay {
+    width: 25px;   
+    background: url(sp_nav.png) -70px -285px no-repeat;
+}
+
