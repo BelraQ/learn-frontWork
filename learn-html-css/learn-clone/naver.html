@@ -11,14 +11,14 @@
 <body>
     <header>
         <div class="body-center"> <!-- 가운데 정렬용 div-->
-            <div>
-                <span>네이버를 시작페이지로</span>
-                <span>쥬니어네이버</span>
+            <div id="header-banner">
+                <span>네이버를 시작페이지로 | </span>
+                <span>쥬니어네이버 | </span>
                 <span>해피빈</span>
             </div>
             <div id="header-search">
                 <a href="https://www.naver.com">
-                    <h1 class="inline">
+                    <h1 id="header-logo">
                         <span class="blind">네이버</span>
                     </h1>
                 </a>
@@ -39,7 +39,7 @@
     </header>
     <nav>
         <div class="body-center">
-            <ul class>
+            <ul>
                 <li><a href=""><span class="blind">메일</span><span id="nav-mail"></span></a></li>
                 <li><a href=""><span class="blind">카페</span><span id="nav-cafe"></span></a></li>
                 <li><a href=""><span class="blind">블로그</span><span id="nav-blog"></span></a></li>
@@ -50,11 +50,16 @@
                 <li><a href=""><span class="blind">지도</span><span id="nav-map"></span></a></li>
                 <li><a href=""><span class="blind">웹툰</span><span id="nav-webtoon"></span></a></li> -->
             </ul>
+            <div class="nav-divider"></div>
         </div>
     </nav>
 
     <main>
-        <h2>실시간 검색어</h2>
+        <h2 class="blind">실시간 검색어</h2>
+        <div id="search-ranking">
+            <span id="rank-number">1</span>
+            <span>실시간</span>
+        </div>
         <h3>연합뉴스</h3>
         <ol>
             <li></li>

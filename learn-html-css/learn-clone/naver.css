@@ -6,19 +6,46 @@
     margin: 0 auto;
     width: 1080px;
 }
-#header-search h1 {
+
+header {
+    height: 170px;
+}
+
+#header-banner {
+    float: right;
+    padding-top: 12px;
+}
+
+#header-banner span {
+    color: #888;
+    letter-spacing: -1px;
+    font-size: 11px;
+    line-height: 22px;
+}
+
+#header-search {
+    clear: both;
+    padding-top: 25px;
+}
+
+#header-search #header-logo {
+    display: inline-block;
     width: 198px;
     height: 48px;
     background-image: url(./sp_search.png);
     background-position: -4px -8px;
     background-repeat: no-repeat;
     vertical-align: middle;
+    position: relative;
+    top: -5px;
+    left: 1px;
 }
 a {
     text-decoration: none;
 }
 
 #header-search fieldset {
+    display: inline-block;
     margin-left: 20px;
     width: 520px;
     height: 49px;
@@ -35,9 +62,7 @@ a {
     padding: 0px;
     outline: none;
 }
-.inline {
-    display: inline-block;
-}
+
 
 .blind {
     overflow: hidden;
@@ -47,6 +72,7 @@ a {
     width: 1px;
     height: 1px;
 }
+
 #header-search fieldset button {
     width: 49px;
     height: 49px;
@@ -54,8 +80,8 @@ a {
     padding: 0; 
     background-color: #03cf5d;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -2px;
+    right: -2px;
 }
 #search-image {
     width: 21px;
@@ -64,9 +90,15 @@ a {
     display: inline-block;
 }
 
+nav {
+    height: 46px;
+    border-top: 1px solid #f1f3f6;
+    border-bottom: 1px solid #d1d8e4;
+}
+
 nav ul {
     margin: 0;
-    padding: 0;
+    padding: 16px 0 0 4px;
     list-style: none;
 }
 nav ul > li {
@@ -77,6 +109,15 @@ nav span:nth-of-type(2n) {
     height:  16px;
     margin-left: 14px;
 }
+
+.nav-divider {
+    float: left;
+    margin:  18px 16px 0;
+    width: 1px;
+    height: 14px;
+    background: #ebeef3;
+}
+
 #nav-mail {
     width: 25px;
     background: url(sp_nav.png) 0px -284px no-repeat;
@@ -105,3 +146,18 @@ nav span:nth-of-type(2n) {
     background: url(sp_nav.png) -70px -285px no-repeat;
 }
 
+main {
+    position: relative;
+}
+
+#search-ranking {
+    position: absolute;
+    top: 0;
+    right: 100px;
+}
+
+#rank-number {
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
+}
