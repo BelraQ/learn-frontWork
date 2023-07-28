@@ -1,1 +1,1 @@
-html, css, react 순서대로 공부합니다.
+html, css 클론코딩으로 공부하고 있습니다.
