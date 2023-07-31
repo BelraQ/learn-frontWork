@@ -26,9 +26,9 @@
 
                 <fieldset class="inline">
                     <legend class="blind">검색</legend>
-                    <div>
-                        <input type="search" autocomplete="off" placeholder="검색어를 입력해 주세요." />
-                    </div>
+                    <input type="search" autocomplete="off" placeholder="검색어를 입력해 주세요." />
+                    <span id="search-keyboard"></span>
+                    <span id="search-history"></span>
                     <button type="submit">
                         <span class="blind">검색</span>
                         <span id="search-image"></span>
@@ -39,6 +39,11 @@
     </header>
     <nav>
         <div class="body-center">
+            <div id="search-ranking">
+                <h2 class="blind">실시간 검색어</h2>
+                <span id="rank-number">1</span>
+                <span>실시간</span>
+            </div>
             <ul>
                 <li><a href=""><span class="blind">메일</span><span id="nav-mail"></span></a></li>
                 <li><a href=""><span class="blind">카페</span><span id="nav-cafe"></span></a></li>
@@ -55,26 +60,63 @@
     </nav>
 
     <main>
-        <h2 class="blind">실시간 검색어</h2>
-        <div id="search-ranking">
-            <span id="rank-number">1</span>
-            <span>실시간</span>
+        <div  id="main-centered" class="body-center">        
+            <div>
+                <div id="main-ad"></div><div id="main-login">
+                    <h3>로그인</h3>
+                </div>
+            </div>  
+            <div>
+                <div id="main-ytn">
+                    <h3>연합뉴스</h3>
+                    <ol>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
+                <div id="main-newsstand">
+                    <h3>언론사 목록</h3>
+                    <ul>
+                      <li><img src="./과학동아.png" alt="과학동아" /></li>
+                      <li><img src="./한국일보.png" alt="한국일보" /></li>
+                      <li><img src="./osen.png" alt="osen" /></li>
+                      <li><img src="./매일경제.png" alt="매일경제" /></li>
+                      <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+                      <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>
+                      <li><img src="./과학동아.png" alt="과학동아" /></li>
+                      <li><img src="./한국일보.png" alt="한국일보" /></li>
+                      <li><img src="./osen.png" alt="osen" /></li>
+                      <li><img src="./매일경제.png" alt="매일경제" /></li>
+                      <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+                      <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>
+                      <li><img src="./과학동아.png" alt="과학동아" /></li>
+                      <li><img src="./한국일보.png" alt="한국일보" /></li>
+                      <li><img src="./osen.png" alt="osen" /></li>
+                      <li><img src="./매일경제.png" alt="매일경제" /></li>
+                      <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+                      <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>
+                    </ul>
+                </div>
+                <div id="main-weather"></div>
+                <div id="main-second-ad"></div>
+            </div>
+            <div>
+                <div id="main-category">
+                    <h3>주제별 보기</h3>
+                </div>
+                <div id="main-shopping">
+                    <h3>쇼핑</h3>
+                </div>
+            </div>
+            <div>
+                <div id="main-event">
+                    <h3>이벤트</h3>
+                </div>
+                <div id="main-third-ad"></div>
+            </div>
+            
         </div>
-        <h3>연합뉴스</h3>
-        <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ol>
-        <h3>언론사 목록</h3>
-        <ul>
-            <li><img src="002.png" alt="언론사-프레시안"></li>
-            <li><img src="005.png" alt="언론사-국민일보"></li>
-        </ul>
-        <h3>로그인</h3>
-        <h3>뉴스</h3>
-        <h3>법률</h3>
-        <h6>쇼핑</h6>
     </main>
     <footer>
         <div>공지사항</div>

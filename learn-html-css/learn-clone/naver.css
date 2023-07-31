@@ -2,6 +2,21 @@
     box-sizing: border-box;
 }
 
+.blind {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Dotum, '돋움', Arial, Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
 .body-center {
     margin: 0 auto;
     width: 1080px;
@@ -56,21 +71,11 @@ a {
     vertical-align: middle;
 }
 #header-search fieldset input{
-    width: 405px;
+    width: 411px;
     height: 23px;
     border: none;
     padding: 0px;
     outline: none;
-}
-
-
-.blind {
-    overflow: hidden;
-    position: absolute;
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    width: 1px;
-    height: 1px;
 }
 
 #header-search fieldset button {
@@ -83,6 +88,26 @@ a {
     top: -2px;
     right: -2px;
 }
+
+#search-keyboard {
+    display: inline-block;
+    width: 19px;
+    height: 11px;
+    background: url(sp_search.png) -33px -60px no-repeat;
+    vertical-align: middle;
+    padding: 0 10px;
+    /*margin: 0 6px*/
+}
+
+#search-history {
+    display: inline-block;
+    width: 9px;
+    height: 4px;
+    background: url(sp_search.png) -87px -60px no-repeat;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+
 #search-image {
     width: 21px;
     height: 21px;
@@ -94,6 +119,19 @@ nav {
     height: 46px;
     border-top: 1px solid #f1f3f6;
     border-bottom: 1px solid #d1d8e4;
+    position: relative;
+}
+
+#search-ranking {
+    position: absolute;
+    top: 14px;
+    right: 100px;
+}
+
+#rank-number {
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
 }
 
 nav ul {
@@ -111,7 +149,6 @@ nav span:nth-of-type(2n) {
 }
 
 .nav-divider {
-    float: left;
     margin:  18px 16px 0;
     width: 1px;
     height: 14px;
@@ -150,14 +187,85 @@ main {
     position: relative;
 }
 
-#search-ranking {
-    position: absolute;
-    top: 0;
-    right: 100px;
+#main-centered {
+    padding: 8px 10px 0;
+    width: 1100px;
 }
 
-#rank-number {
-    margin-top: -9px;
-    color: #00ab33;
-    font-size: 16px;
+#main-ad {
+    display: inline-block;
+    width: 740px;
+    height: 120px;
+    background: #555;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+#main-login {
+    display: inline-block;
+    width: 332px;
+    height: 120px;
+    vertical-align: top;
+    background-color: #888;
+    margin-bottom: 8px;
+}
+
+#main-ytn {
+    display: inline-block;
+    width: 740px;
+    height: 46px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+#main-newsstand {
+    display: inline-block;
+    width: 740px;
+    height: 246px;
+    margin-right: 8px;
+    margin-bottom: 8px; 
+}
+
+#main-weather {
+    display: inline-block;
+    width: 332px;
+    height: 142px;
+    margin-bottom: 8px;
+}
+
+#main-second-ad {
+    display: inline-block;
+    width: 332px;
+    height: 150px;
+    background: #555;
+    margin-bottom: 8px;
+}
+
+#main-category {
+    display: inline-block;
+    width: 740px;
+    height: 837px;
+    background: #888;
+}
+
+#main-shopping {
+    display: inline-block;
+    width: 332px;
+    height: 837px;
+    background: #888;
+}
+
+#main-event {
+    display: inline-block;
+    width: 740px;
+    height: 130px;
+    background: #555;
+    vertical-align: top ;
+}
+
+#main-third-ad {
+    display: inline-block;
+    width: 332px;
+    height: 130px;
+    background: #555;
 }
