@@ -17,9 +17,22 @@ html, body {
     font-family: Dotum, '돋움', Arial, Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.float-left {
+    float: left;
+}
+
 .body-center {
     margin: 0 auto;
     width: 1080px;
+    position: relative;
 }
 
 header {
@@ -125,7 +138,28 @@ nav {
 #search-ranking {
     position: absolute;
     top: 14px;
-    right: 100px;
+    right: 0;
+    width: 198px;
+    height: 20px;
+}
+
+#search-ranking ul {
+    display: none;
+    list-style: none;
+    padding: 17px;
+    margin: 0;
+    width: 332px;
+    height: 334px;
+    border: 1px solid #aaa;
+    position: absolute;
+    background: white;
+    top: -15px;
+    right: 0;
+    z-index: 1;
+}
+
+#search-ranking:hover ul{
+    display: inline-block;
 }
 
 #rank-number {
@@ -134,15 +168,15 @@ nav {
     font-size: 16px;
 }
 
-nav ul {
+#nav-menu {
     margin: 0;
     padding: 16px 0 0 4px;
     list-style: none;
 }
-nav ul > li {
+#nav-menu > li {
     display: inline-block;
 }
-nav span:nth-of-type(2n) {
+#nav-menu span:nth-of-type(2n) {
     display: inline-block;
     height:  16px;
     margin-left: 14px;
@@ -188,12 +222,18 @@ main {
 }
 
 #main-centered {
-    padding: 8px 10px 0;
+    padding: 8px 10px;
     width: 1100px;
 }
 
-#main-ad {
+#main-first-block {
     display: inline-block;
+    width: 100%;
+    vertical-align: top;
+}
+
+#main-ad {
+    float: left;
     width: 740px;
     height: 120px;
     background: #555;
@@ -202,12 +242,27 @@ main {
 }
 
 #main-login {
-    display: inline-block;
+    float: left;
     width: 332px;
     height: 120px;
     vertical-align: top;
     background-color: #888;
     margin-bottom: 8px;
+}
+
+#main-second-block {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 8px;
+}
+
+#main-second-block .float-left:first-child {
+    width: 740px;
+}
+
+#main-second-block .float-left:last-child {
+    width: 332px;
+    vertical-align: top;
 }
 
 #main-ytn {
@@ -218,12 +273,43 @@ main {
     margin-bottom: 8px;
 }
 
+#main-ytn h3,
+#main-ytn ol {
+    display: inline-block;
+}
+
 #main-newsstand {
     display: inline-block;
     width: 740px;
     height: 246px;
     margin-right: 8px;
-    margin-bottom: 8px; 
+}
+
+#main-newsstand h3 {
+    height: 45px;
+    border-bottom: 1px solid #ebeef3;
+}
+
+#main-newsstand ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#main-newsstand li {
+    float: left;
+    width: 123px;
+    height: 67px;
+    border-right: 1px solid #f1f3f6;
+    border-bottom: 1px solid #f1f3f6;
+    text-align: center;
+}
+
+#main-newsstand li img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);    
 }
 
 #main-weather {
@@ -238,34 +324,43 @@ main {
     width: 332px;
     height: 150px;
     background: #555;
-    margin-bottom: 8px;
 }
 
 #main-category {
-    display: inline-block;
+    float: left;
     width: 740px;
     height: 837px;
     background: #888;
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
 
 #main-shopping {
-    display: inline-block;
-    width: 332px;
+    float: left;
+    width: 330px;
     height: 837px;
     background: #888;
+    margin-bottom: 8px;
+}
+
+#main-third-block,
+#main-fourth-block {
+    display: inline-block;
+    width: 100%;
 }
 
 #main-event {
-    display: inline-block;
+    float: left;
     width: 740px;
     height: 130px;
     background: #555;
     vertical-align: top ;
+    margin-right: 8px;
 }
 
 #main-third-ad {
-    display: inline-block;
-    width: 332px;
+    float: left;
+    width: 330px;
     height: 130px;
     background: #555;
 }
