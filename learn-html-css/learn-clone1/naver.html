@@ -23,17 +23,19 @@
                     </h1>
                 </a>
                 <h2 class="blind">검색창</h2>
-
-                <fieldset class="inline">
-                    <legend class="blind">검색</legend>
-                    <input type="search" autocomplete="off" placeholder="검색어를 입력해 주세요." />
-                    <span id="search-keyboard"></span>
-                    <span id="search-history"></span>
-                    <button type="submit">
-                        <span class="blind">검색</span>
-                        <span id="search-image"></span>
-                    </button>
-                </fieldset>
+                
+                <form  class="inline-block" ction="">
+                    <fieldset class="inline">
+                        <legend class="blind">검색</legend>
+                        <input type="search" autocomplete="off" placeholder="검색어를 입력해 주세요." />
+                        <span id="search-keyboard"></span>
+                        <span id="search-history"></span>
+                        <button type="submit">
+                            <span class="blind">검색</span>
+                            <span id="search-image"></span>
+                        </button>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </header>
@@ -102,7 +104,15 @@
             <div id="main-first-block">
                 <div id="main-ad"></div>
                 <div id="main-login">
-                    <h3>로그인</h3>
+                    <h3 class="blind">로그인</h3>
+                    <div class="login-wrapper">
+                        <span class="login-text">네이버를 더 안전하고 편리하게 이용하세요.</span>
+                        <a href="">
+                            <span class="blind">네이버 로그인</span>
+                            <span class="login-image"></span>
+                        </a>
+                        <a class="login-signup" href="">회원가입</a>
+                    </div>
                 </div>
             </div>  
             <div id="main-second-block">
@@ -144,7 +154,41 @@
             </div>
             <div id="main-third-block">
                 <div id="main-category">
-                    <h3>주제별 보기</h3>
+                    <h3 class="blind">주제별 보기</h3>
+                    <div id="main-category-top">
+                        <button id="subject-all">
+                            <span class="blind">전체 주제 열기</span>
+                            <span></span>
+                        </button>
+                        <div id="subject-list">
+                            <div class="opacity left"></div>
+                            <ul>
+                                <li>리빙</li>   
+                                <li>푸드</li>
+                                <li>스포츠</li>
+                                <li>자동차</li>
+                                <li>패션뷰티</li>
+                                <li>부모i</li>
+                                <li class="highlight">건강</li>
+                                <li>웹툰</li>
+                                <li>게임</li>
+                                <li>티비</li>
+                                <li>연예</li>
+                                <li>뮤직</li>
+                                <li>영화</li>
+                                <li>책문화</li>
+                            </ul>
+                            <div class="opacity right"></div>
+                        </div>
+                        <button id="subject-prev">
+                            <span class="blind">이전 주제</span>
+                            <span></span>
+                        </button>
+                        <button id="subject-next">
+                            <span class="blind">다음 주제</span>
+                            <span></span>
+                        </button>
+                    </div>
                 </div>
                 <div id="main-shopping">
                     <h3>쇼핑</h3>

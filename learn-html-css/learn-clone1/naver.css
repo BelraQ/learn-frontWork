@@ -246,8 +246,42 @@ main {
     width: 332px;
     height: 120px;
     vertical-align: top;
-    background-color: #888;
+    background-color: white;
     margin-bottom: 8px;
+}
+
+#main-login .login-wrapper {
+    padding: 15px 25px;
+}
+
+#main-login .login-wrapper a {
+    display: block;
+}
+
+#main-login .login-text {
+    color: #888;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+#main-login .login-image {
+    margin-top: 12px;
+    display: inline-block;
+    width: 280px;
+    height: 37px;
+    background: url(./sp_login.png) 0 -47px no-repeat;
+}
+
+#main-login .login-signup {
+    float: right;
+    font-size: 12px;
+    line-height: 38px;
+    color: #666;
+    text-decoration: none;
+}
+
+#main-login .login-signup:hover {
+    text-decoration: underline;
 }
 
 #main-second-block {
@@ -335,6 +369,114 @@ main {
     margin-bottom: 8px;
 }
 
+#main-category-top {
+    display: inline-block;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #ebeef3;
+}
+
+#subject-list, 
+#subject-all, 
+#subject-prev,
+#subject-next {
+    float: left;
+    height: 45px;
+    border-bottom: 1px solid #ebeef3;
+    padding: 0;
+}
+
+#subject-list {
+    position: relative;
+    width: 603px;
+}
+
+#subject-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 45px;
+    width: 1000px;
+}
+
+#subject-list li {
+    float: left;
+    margin-right: 10px;
+    padding: 14px 7px 0;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: NanumSquare, Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
+.opacity {
+    opacity: 0.5;
+    background: white;
+}
+
+.opacity.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 45px;
+    width: 15px;
+}
+
+.opacity.right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 45px;
+    width: 15px;
+}
+
+#subject-list li.highlight {
+    border-bottom: 3px solid #00c73c;
+    color: #00b336;
+    font-weight: 700;
+    height: 45px;
+}
+
+#subject-all, 
+#subject-prev,
+#subject-next {
+    position: relative;
+    width: 45px;
+    border: none;
+    border-left: 1px solid #ebeef3;
+    background: white;
+}
+
+#subject-all span:last-child {
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    width: 20px;
+    height: 14px;
+    background: url(./sp_themecast.png) no-repeat;
+    background-position: -218px -257px;
+}
+#subject-prev span:last-child {
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    width: 8px;
+    height: 16px;
+    background: url(./sp_themecast.png) no-repeat;
+    background-position:-320px 0;
+}
+
+#subject-next span:last-child {
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    width: 8px;
+    height: 16px;
+    background: url(./sp_themecast.png) no-repeat;
+    background-position: -320px -52px;
+}
+
 #main-shopping {
     float: left;
     width: 330px;
@@ -364,3 +506,6 @@ main {
     height: 130px;
     background: #555;
 }
+
+
+
