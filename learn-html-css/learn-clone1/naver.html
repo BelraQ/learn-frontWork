@@ -1,10 +1,44 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" co ntent="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clone</title>
     <link rel="shortcut icon" type="image/x-icon" href="naver-favicon.ico" />
+    <link rel="stylesheet" href="./webfont.css">
+    <!-- 고객 관점 (로딩 시간의 이유로)-->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .blind {
+            overflow: hidden;
+            position: absolute;
+            clip: rect(0 0 0 0);
+            margin: -1px;
+            width: 1px;
+            height: 1px;
+        }
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Dotum, '돋움', Arial, Helvetica, "Apple SD Gothic Neo", sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+        
+        .inline-block {
+            display: inline-block;
+        }
+        
+        .float-left {
+            float: left;
+        }
+    </style>
     <link rel="stylesheet" href="naver.css" />
 </head>
 
@@ -24,7 +58,7 @@
                 </a>
                 <h2 class="blind">검색창</h2>
                 
-                <form  class="inline-block" ction="">
+                <form  class="inline-block" action="">
                     <fieldset class="inline">
                         <legend class="blind">검색</legend>
                         <input type="search" autocomplete="off" placeholder="검색어를 입력해 주세요." />

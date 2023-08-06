@@ -1,33 +1,4 @@
-* {
-    box-sizing: border-box;
-}
 
-.blind {
-    overflow: hidden;
-    position: absolute;
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    width: 1px;
-    height: 1px;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Dotum, '돋움', Arial, Helvetica, "Apple SD Gothic Neo", sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-}
-
-.inline-block {
-    display: inline-block;
-}
-
-.float-left {
-    float: left;
-}
 
 .body-center {
     margin: 0 auto;
@@ -299,6 +270,13 @@ main {
     vertical-align: top;
 }
 
+#main-ytn h3, #main-newsstand h3 {
+    font-size: 14px;
+    font-family: NanumSquare, Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
 #main-ytn {
     display: inline-block;
     width: 740px;
@@ -436,6 +414,10 @@ main {
     color: #00b336;
     font-weight: 700;
     height: 45px;
+}
+
+#subject-all {
+    border-right: 1px solid #ebeef3;
 }
 
 #subject-all, 
