@@ -2,7 +2,6 @@ const path = require('path');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-    name: "wordRelay-setting",
     mode: "development",
     devtool: "eval",
     resolve: {
@@ -19,13 +18,8 @@ module.exports = {
             loader: 'babel-loader', // webpack용 문법 변환
             options: { // babel의 옵션
                 presets: [
-                    ['@babel/preset-env', {
-                        //targets: {
-                        //    browsers: ['> 1% in KR'],
-                        //},
-                        //debug: true,
-                    }], 
-                    '@babel/preset-react'
+                    '@babel/preset-env',
+                    ['@babel/preset-react', {"runtime": "automatic"}]
                 ],
                 plugins: [
                     'react-refresh/babel'
