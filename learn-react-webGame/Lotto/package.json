@@ -18,7 +18,8 @@
   "homepage": "https://github.com/BelraQ/learn-frontWork#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",

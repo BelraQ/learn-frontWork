@@ -1,27 +1,64 @@
 import React, {useState, useRef, useEffect} from 'react';
+import Ball from './Ball';
 
-const color = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+
+
 
 const random = (plus, multiple) => {
     return Math.floor(Math.random() * multiple + plus);
 } 
 
-const Lotto = () => {
-    const [result, setResult] = useState([]);
-    const lottoTime = useRef();
+const getNumbers = (bonus) => {
+    if (bonus !== undefined) {
+        return random(1, 30);
+    } else {
+        const resultArray = Array(6).fill().map(() => random(1, 30));
+        console.log(resultArray);
+        return resultArray;
+    }
+}
 
+const Lotto = () => {
+
+    
+
+    const [result, setResult] = useState(getNumbers);
+    const [length, setLength] = useState(0);
+    const lottoTime = useRef();
+    const redoTime = useRef();
+    const [redo, setRedo] = useState(false);
+    const [bonus, setBonus] = useState(null);
 
     useEffect(() => {
-        lottoTime.current = setTimeout(addBall, 1000);
+        lottoTime.current = setTimeout(showBall, 500);
         return () => clearTimeout(lottoTime.current);
-    }, [result]);
+    }, [length]);
 
-    const addBall = () => {
-        if (result.length < 6) {
-            setResult((prev) => [...prev, [random(1, 30), color[random(0, 5)]]]);
-        } else if (result.length === 6) {
-
+     useEffect(() => {
+        if (bonus !== null) {
+            redoTime.current = setTimeout(onRedo, 1000);
+            console.log('redo: ', redo);
+            return () => clearTimeout(redoTime.current);
         }
+     }, [bonus]);
+
+    const onRedo = () => {
+        setRedo(true);
+    }
+
+    const showBall = () => {
+        if (length < 6) {
+            setLength((length) => length + 1);
+        } else if (bonus === null) {
+            setBonus(getNumbers(bonus));
+        } 
+    }
+
+    const clickRedo = () => {
+        setResult(getNumbers());
+        setLength(-1);
+        setBonus(null);
+        setRedo(false);
     }
 
     return (
@@ -30,15 +67,16 @@ const Lotto = () => {
         {
             
             result.map((value, index) => {
+                //console.log(value);
                 return (
-                    <div key={value[0] + value[1] + index} id="ball" style={{background: `${value[1]}`}}> 
-                        <span id='text'>{value[0]}</span>
-                    </div>
+                    index <= length 
+                    && <Ball key={value + index} number={value}/>
                 );
             })
         }
         <h3>보너스!</h3>
-        <div id='ball'></div>
+        {bonus && <Ball number={bonus}/>}
+        {redo && <button onClick={clickRedo}>한 번 더!</button>}
         </>
     );
 }
