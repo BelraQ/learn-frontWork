@@ -16,6 +16,7 @@ const BorderBall = styled.div`
 
 
 const Ball = memo(({number}) => {
+    console.log('Ball element');
     let color;
     if (number <= 10) {
         color = 'red';
@@ -29,6 +30,7 @@ const Ball = memo(({number}) => {
         color = 'green';
       }
     return (
+        
         <BorderBall className="ball" background={color}> 
             {number}
         </BorderBall>

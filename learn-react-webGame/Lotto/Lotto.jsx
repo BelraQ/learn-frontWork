@@ -2,8 +2,6 @@ import React, {useState, useRef, useEffect} from 'react';
 import Ball from './Ball';
 
 
-
-
 const random = (plus, multiple) => {
     return Math.floor(Math.random() * multiple + plus);
 } 
