@@ -1,0 +1,57 @@
+.Form {
+  display: flex;
+  justify-content: center;
+  outline: none;
+  padding-top: 10px;
+  .setting {
+    width: 360px;
+    display: flex;
+    justify-content: space-around;
+    input {
+      color: #76599E;
+      font-size: 1rem;
+      background: #90B4E8;
+      &:hover {
+        background: #6FA1EA;
+      }
+      padding-left: 10px;
+      border: none;
+      border-radius: 15px;
+      width: 50px;
+      outline: none;
+      //border: none;
+      transition: all 0.3s;
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      &::placeholder {
+        color: gray;
+      }
+    }
+    .row {
+      order: 1;
+    }
+    .cell {
+      order: 2;
+    }
+    .mine {
+      order: 3;
+    }
+  }
+  .start {
+    color: #354F96;
+    font-size: 1rem;
+    order: 4;
+    background: #95ACE8;
+    padding: 5px 10px;
+    margin-left: 30px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s;
+    &:hover {
+      background: #8988E3;
+    }
+  }
+}

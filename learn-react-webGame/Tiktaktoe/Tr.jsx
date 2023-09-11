@@ -9,7 +9,7 @@ const Tr = memo(({rowData, rowIndex, dispatch}) => {
             
             Array(rowData.length).fill().map((v, i) => {
                 return (
-                    <Td cellData={rowData[i]} rowIndex={rowIndex} cellIndex={i} dispatch={dispatch}/>
+                    <Td key={i} cellData={rowData[i]} rowIndex={rowIndex} cellIndex={i} dispatch={dispatch}/>
                 )
             })
         }

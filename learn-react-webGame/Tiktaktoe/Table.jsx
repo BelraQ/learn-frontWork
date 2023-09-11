@@ -8,7 +8,7 @@ const Table = memo(({tableData, onClick, dispatch}) => {
             <tbody>
                 {
                     Array(tableData.length).fill().map((v, i) => {
-                        return <Tr rowData={tableData[i]} rowIndex={i} dispatch={dispatch}></Tr>
+                        return <Tr key={i} rowData={tableData[i]} rowIndex={i} dispatch={dispatch}></Tr>
                     })
                 }
             </tbody>

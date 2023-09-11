@@ -1,0 +1,25 @@
+.Template {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  width: 32rem;
+  padding: 3rem 0;
+  background-color: #698AEA;
+  //background-clip: content-box;
+  border-radius: 30px;
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
+  .main {
+    background-color: #ABD3FF;
+    padding: 1rem 0;
+    //transition: height 10s linear ease-out;
+  }
+  //transition: height 10s ease-in-out;
+  .timer {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+}

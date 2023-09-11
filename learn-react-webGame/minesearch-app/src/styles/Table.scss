@@ -1,0 +1,36 @@
+$height: 0 !default;
+
+.MineTable {
+  opacity: 0;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 1.3rem;
+  
+  &.showUp {
+    animation: showTable 1s 1.3s linear;
+    animation-fill-mode: forwards;
+  }
+  @keyframes showTable {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  tbody {
+    width: 100%;
+    height: 100%;
+  }
+  tr {
+    border: 1px solid black;
+  }
+  td {
+    border: 1px solid black;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    //transition: height 1s ease-out;
+  }
+}
