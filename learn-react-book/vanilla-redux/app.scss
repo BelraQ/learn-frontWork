@@ -1,0 +1,14 @@
+.toggle {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  &-active {
+    font-size: 30px;
+  }
+}
+
+.toggle.active {
+  background: yellow;
+}

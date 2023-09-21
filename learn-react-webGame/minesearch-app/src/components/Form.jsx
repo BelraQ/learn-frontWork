@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo, useContext, memo } from 'react';
 import useInputs from '../lib/useInputs';
 import TableContext from '../contexts/TableContext';
-import { START_GAME } from './Minesearch';
 import '../styles/Form.scss';
+import { startGame } from '../modules/minereducer';
 
 const Form = memo(() => {
   const { dispatch } = useContext(TableContext);
@@ -17,7 +17,7 @@ const Form = memo(() => {
       [],
     ),
   );
-  
+
   const onClickBtn = useCallback(
     (e) => {
       e.preventDefault();
@@ -31,7 +31,7 @@ const Form = memo(() => {
       }
 
       console.log(row, cell, mine);
-      dispatch({ type: START_GAME, row, cell, mine });
+      dispatch(startGame(row, cell, mine));
     },
     [row, cell, mine],
   );

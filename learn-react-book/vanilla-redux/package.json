@@ -1,0 +1,12 @@
+{
+  "name": "vanilla-redux",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "sass": "^1.67.0"
+  }
+}
