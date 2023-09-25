@@ -28,7 +28,7 @@ const Form = memo(({DPstartGame}) => {
       }
 
       console.log(row, cell, mine);
-      DPstartGame(row, cell, mine);
+      DPstartGame({row, cell, mine});
     },
     [row, cell, mine],
   );

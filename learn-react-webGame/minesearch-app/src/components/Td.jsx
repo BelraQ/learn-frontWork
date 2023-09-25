@@ -66,11 +66,11 @@ const Td = memo(({ index, tableData, halted, DPcellMine }) => {
 
     switch (code) {
       case CODE.NORMAL:
-        DPopenCell(rowIndex, cellIndex);
+        DPopenCell({rowIndex, cellIndex});
         return;
       case CODE.MINE:
         console.log('ClickMine!');
-        DPclickMine(rowIndex, cellIndex);
+        DPclickMine({rowIndex, cellIndex});
         return;
       default:
         return;
@@ -89,15 +89,15 @@ const Td = memo(({ index, tableData, halted, DPcellMine }) => {
       switch (code) {
         case CODE.NORMAL:
         case CODE.MINE:
-          DPflagCell(rowIndex, cellIndex);
+          DPflagCell({rowIndex, cellIndex});
           return;
         case CODE.FLAG:
         case CODE.FLAG_MINE:
-          DPquestCell(rowIndex, cellIndex);
+          DPquestCell({rowIndex, cellIndex});
           return;
         case CODE.QUESTION:
         case CODE.QUESTION_MINE:
-          DPnormalizeCell(rowIndex, cellIndex);
+          DPnormalizeCell({rowIndex, cellIndex});
         default:
           return;
       }

@@ -1,10 +1,15 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import GameBody from '../../components/GameBody';
+import { useSelector } from '../../../node_modules/react-redux/es/exports';
 import {
-  useDispatch,
-  useSelector,
-} from '../../../node_modules/react-redux/es/exports';
-import { clickMine, flagCell, normalizeCell, openCell, questCell, tableShowF } from '../../modules/minesearch';
+  clickMine,
+  flagCell,
+  normalizeCell,
+  openCell,
+  questCell,
+  tableShowF,
+} from '../../modules/minesearch';
+import useActions from '../../lib/useActions';
 
 const GameBodyContainer = memo(() => {
   const state = useSelector(({ minesearch }) => ({
@@ -13,20 +18,17 @@ const GameBodyContainer = memo(() => {
     showUp: minesearch.showUp,
     halted: minesearch.halted,
   }));
-  const dispatch = useDispatch();
-  const DPtableShowF = useCallback(() => dispatch(tableShowF()), []);
-  const DPopenCell = useCallback(
-    (rowIndex, cellIndex) => dispatch(openCell(rowIndex, cellIndex)),
+  const [
+    DPtableShowF,
+    DPopenCell,
+    DPclickMine,
+    DPflagCell,
+    DPquestCell,
+    DPnormalizeCell,
+  ] = useActions(
+    [tableShowF, openCell, clickMine, flagCell, questCell, normalizeCell],
     [],
   );
-  const DPclickMine = useCallback((rowIndex, cellIndex) => {
-    console.log('DPclickMine');
-    dispatch(clickMine(rowIndex, cellIndex));
-  }, []);
-  const DPflagCell = useCallback((rowIndex, cellIndex) => dispatch(flagCell(rowIndex, cellIndex)), []);
-  const DPquestCell = useCallback((rowIndex, cellIndex) => dispatch(questCell(rowIndex, cellIndex)), []);
-  const DPnormalizeCell = useCallback((rowIndex, cellIndex) => dispatch(normalizeCell(rowIndex, cellIndex)), []);
-
   const DPcellMine = useMemo(
     () => ({
       DPopenCell,

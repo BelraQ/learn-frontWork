@@ -1,17 +1,13 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import Menu from '../../components/Menu';
-import { useDispatch } from '../../../node_modules/react-redux/es/exports';
 import { startGame } from '../../modules/minesearch';
+import useActions from '../../lib/useActions';
 
 
 const MenuContainer = memo(() => {
   const timer = useSelector(({minesearch}) => minesearch.timer);
-  const dispatch = useDispatch();
-
-  const DPstartGame = useCallback((row, cell, mine) => {
-    dispatch(startGame(row, cell, mine));
-  }, []);
+  const [DPstartGame] = useActions([startGame], []);
 
   return (
     <Menu timer={timer} DPstartGame={DPstartGame}/>
