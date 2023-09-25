@@ -1,13 +1,8 @@
-import React, { memo, useCallback, useContext, useEffect } from 'react';
-import TableContext from '../contexts/TableContext';
+import React, {
+  memo,
+  useCallback,
+} from 'react';
 import styled from 'styled-components';
-import {
-  openCell,
-  clickMine,
-  flagCell,
-  questCell,
-  normalizeCell,
-} from '../modules/minereducer';
 import CODE from '../utils/minecode';
 
 const MineTd = styled.td`
@@ -48,14 +43,18 @@ const getTdText = (code) => {
       return '?';
     case CODE.OPENED:
     default:
-      return '';
+      return code || '';
   }
 };
 
-const Td = memo(({ index }) => {
-  const { tableData, dispatch, halted } = useContext(TableContext);
+const Td = memo(({ index, tableData, halted, DPcellMine }) => {
   const [rowIndex, cellIndex] = index;
   const code = tableData[rowIndex][cellIndex];
+  const { DPopenCell, DPclickMine, DPflagCell, DPquestCell, DPnormalizeCell } =
+    DPcellMine;
+
+  
+
 
   const onClickTd = useCallback(() => {
     //console.log(rowIndex, cellIndex);
@@ -67,11 +66,11 @@ const Td = memo(({ index }) => {
 
     switch (code) {
       case CODE.NORMAL:
-        dispatch(openCell(rowIndex, cellIndex));
+        DPopenCell(rowIndex, cellIndex);
         return;
       case CODE.MINE:
         console.log('ClickMine!');
-        dispatch(clickMine(rowIndex, cellIndex));
+        DPclickMine(rowIndex, cellIndex);
         return;
       default:
         return;
@@ -90,15 +89,15 @@ const Td = memo(({ index }) => {
       switch (code) {
         case CODE.NORMAL:
         case CODE.MINE:
-          dispatch(flagCell(rowIndex, cellIndex));
+          DPflagCell(rowIndex, cellIndex);
           return;
         case CODE.FLAG:
         case CODE.FLAG_MINE:
-          dispatch(questCell(rowIndex, cellIndex));
+          DPquestCell(rowIndex, cellIndex);
           return;
         case CODE.QUESTION:
         case CODE.QUESTION_MINE:
-          dispatch(normalizeCell(rowIndex, cellIndex));
+          DPnormalizeCell(rowIndex, cellIndex);
         default:
           return;
       }
@@ -107,15 +106,16 @@ const Td = memo(({ index }) => {
   );
 
   return (
-    <>
-      <MineTd
-        $backgroundColor={getTdStyle(code)}
-        onClick={onClickTd}
-        onContextMenu={onRightClickTd}
-      >
-        {getTdText(code)}
-      </MineTd>
-    </>
+      <>
+        <MineTd
+          $backgroundColor={getTdStyle(code)}
+          onClick={onClickTd}
+          onContextMenu={onRightClickTd}
+        >
+          {getTdText(code)}
+        </MineTd>
+      </>
+    
   );
 });
 

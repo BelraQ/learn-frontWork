@@ -1,30 +1,48 @@
-import React, { memo, useContext, useCallback } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import Tr from './Tr';
-import TableContext from '../contexts/TableContext';
 import '../styles/Table.scss';
-import cn from 'classnames';
-import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-
-const OpacityTable = styled.table`
-    opacity: ${props => props.$showUp ? 0 : 1};
-  `;
-
-const Table = memo(() => {
-  const { tableData, showUp } = useContext(TableContext);
+const Table = memo(({ state, DPtableShowF, DPcellMine }) => {
+  const { tableData, showUp } = state;
   
+  console.log('showUp:', showUp);
+
+  const showUpStep = useCallback(() => {
+    DPtableShowF();
+    return {
+      opacity: 1,
+    };
+  }, []);
 
   return (
-    <OpacityTable className={cn('MineTable', {showUp})} $showUp={showUp}>
-      <tbody>
-        {Array(tableData.length)
-          .fill()
-          .map((tr, i) => {
-            return <Tr key={i} rowIndex={i}></Tr>;
-          })}
-      </tbody>
-    </OpacityTable>
+      <motion.table
+        className={'MineTable'}
+        initial={{ opacity: 0 }}
+        animate={showUp && showUpStep}
+        transition={{
+          duration: 1,
+          delay: 1.3,
+        }}
+      >
+        <tbody>
+          {Array(tableData.length)
+            .fill()
+            .map((tr, i) => {
+              return (
+                <Tr
+                  key={'minetable' + i}
+                  rowIndex={i}
+                  tableData={tableData}
+                  halted={state.halted}
+                  DPcellMine={DPcellMine}
+                ></Tr>
+              );
+            })}
+        </tbody>
+      </motion.table>
   );
+  
 });
 
 export default Table;

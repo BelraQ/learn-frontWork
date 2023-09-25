@@ -1,4 +1,3 @@
-$height: 0 !default;
 
 .MineTable {
   opacity: 0;
@@ -6,19 +5,7 @@ $height: 0 !default;
   border-collapse: collapse;
   text-align: center;
   font-size: 1.3rem;
-  
-  &.showUp {
-    animation: showTable 1s 1.3s linear;
-    animation-fill-mode: forwards;
-  }
-  @keyframes showTable {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+
   tbody {
     width: 100%;
     height: 100%;

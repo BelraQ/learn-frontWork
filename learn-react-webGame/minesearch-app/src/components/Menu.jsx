@@ -1,19 +1,17 @@
-import React, {useContext, memo} from 'react';
+import React, { memo, useMemo} from 'react';
 import Form from './Form';
-import TableContext from '../contexts/TableContext';
 
-const Menu = memo(() => {
+const Menu = memo(({timer, DPstartGame}) => {
 
-  const {timer} = useContext(TableContext);
   //console.log('timer:', timer);
   return (
     <div className="menu">
-      <Form/>
+      <Form DPstartGame={DPstartGame}/>
       <div className="timer">
         <span>timer: {timer}</span>
       </div>
     </div>
-  );
+  )
 });
 
 export default Menu;

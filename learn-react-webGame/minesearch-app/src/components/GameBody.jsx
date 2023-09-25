@@ -1,44 +1,38 @@
-import React, {useCallback, useContext, memo, useRef} from 'react';
-import styled, {keyframes} from 'styled-components';
-import TableContext from '../contexts/TableContext';
+import React, {useCallback, useContext, memo, useRef, useMemo} from 'react';
+import { motion } from 'framer-motion';
 import Table from './Table';
+import '../styles/GameBody.scss';
 
 
-const Body = styled.div`
-    margin: 2rem 0 1.5rem;
-    //height: ${props => props.$row * 40 || 0}px;
-    animation-name: ${({$row, $long, $setting, $height}) => $long($height, $setting($row))};
-    animation-duration: 1.3s; 
-    animation-timing-function: ease-in-out;
-    -webkit-animation-fill-mode:both;
-  `;
+const GameBody = memo(({DPtableShowF, DPcellMine, state}) => {
 
-const long = (height, autoSet) => keyframes`
-    from {
-      height: ${height}px;
-    }
-    to {
-      height: ${autoSet}px;  
-    }
-  `;
+  const {tableData, result, showUp } = state;
+  console.log('GameBody-tableData:',tableData);
 
-const GameBody = memo(() => {
-
-  const {tableData, result} = useContext(TableContext);
   const height = useRef(0);
   //console.log(tableData.length);
   //console.log('높이: ', height);
 
   const settingHeight = useCallback((row) => {
+    console.log('settingHeight');
     height.current = (row * 41);
     return row * 41;
   }, []);
-
+  
+  console.log('GameBody-showUp:', showUp);
   return (
-    <Body $row={tableData.length} $setting={settingHeight} $long={long} $height={height.current}>
-      <Table/>
+    <motion.div 
+    className={'GameBody'}
+    initial={{height: 0}}
+    animate={{height: showUp ? settingHeight(tableData.length) : height.current}} 
+    transition={{
+      duration: 1.3,
+      easeInOut: [1],
+    }}
+    >
+      <Table state={state} DPtableShowF={DPtableShowF} DPcellMine={DPcellMine}/>
       <div>{result}</div>
-    </Body>
+    </motion.div>
   );
 });
 

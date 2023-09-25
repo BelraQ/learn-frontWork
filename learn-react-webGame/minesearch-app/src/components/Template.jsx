@@ -1,14 +1,14 @@
 import React, {memo} from 'react';
 import '../styles/Template.scss';
-import Menu from './Menu';
-import GameBody from './GameBody';
+import MenuContainer from '../containers/minesearch/MenuContainer';
+import GameBodyContainer from '../containers/minesearch/GameBodyContainer';
 
 const Template = memo(() => {
   return (
     <div className="Template">
       <main className="main">
-        <Menu/>
-        <GameBody/>
+        <MenuContainer/>
+        <GameBodyContainer/>
       </main>
     </div>
   );

@@ -1,18 +1,15 @@
-import React, { useCallback, useMemo, useContext, memo } from 'react';
+import React, { useCallback, useMemo, memo } from 'react';
 import useInputs from '../lib/useInputs';
-import TableContext from '../contexts/TableContext';
 import '../styles/Form.scss';
-import { startGame } from '../modules/minereducer';
 
-const Form = memo(() => {
-  const { dispatch } = useContext(TableContext);
+const Form = memo(({DPstartGame}) => {
 
   const [{ row, cell, mine }, onChange] = useInputs(
     useMemo(
       () => ({
         row: 10,
         cell: 10,
-        mine: 0,
+        mine: 5,
       }),
       [],
     ),
@@ -31,49 +28,52 @@ const Form = memo(() => {
       }
 
       console.log(row, cell, mine);
-      dispatch(startGame(row, cell, mine));
+      DPstartGame(row, cell, mine);
     },
     [row, cell, mine],
   );
 
-  return (
-    <form className="Form" onSubmit={onClickBtn}>
-      <div className="setting">
-        <input
-          min="0"
-          max="30"
-          className="row"
-          type="number"
-          name="row"
-          value={row}
-          placeholder="세로"
-          onChange={onChange}
-        />
-        <input
-          min="0"
-          max="30"
-          className="cell"
-          type="number"
-          name="cell"
-          value={cell}
-          placeholder="가로"
-          onChange={onChange}
-        />
-        <input
-          min="0"
-          max="30"
-          className="mine"
-          type="number"
-          name="mine"
-          value={mine}
-          placeholder="지뢰"
-          onChange={onChange}
-        />
-      </div>
-      <button className="start" onClick={onClickBtn}>
-        시작
-      </button>
-    </form>
+  return useMemo(
+    () => (
+      <form className="Form" onSubmit={onClickBtn}>
+        <div className="setting">
+          <input
+            min="0"
+            max="30"
+            className="row"
+            type="number"
+            name="row"
+            value={row}
+            placeholder="세로"
+            onChange={onChange}
+          />
+          <input
+            min="0"
+            max="30"
+            className="cell"
+            type="number"
+            name="cell"
+            value={cell}
+            placeholder="가로"
+            onChange={onChange}
+          />
+          <input
+            min="0"
+            max="30"
+            className="mine"
+            type="number"
+            name="mine"
+            value={mine}
+            placeholder="지뢰"
+            onChange={onChange}
+          />
+        </div>
+        <button className="start" onClick={onClickBtn}>
+          시작
+        </button>
+      </form>
+    ),
+    [row, cell, mine],
   );
 });
 
