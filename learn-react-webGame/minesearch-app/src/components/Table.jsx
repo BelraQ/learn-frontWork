@@ -1,6 +1,6 @@
-import React, { memo, useCallback, useMemo } from 'react';
-import Tr from './Tr';
-import '../styles/Table.scss';
+import React, { memo, useCallback } from 'react';
+import Tr from 'components/Tr';
+import 'styles/Table.scss';
 import { motion } from 'framer-motion';
 
 const Table = memo(({ state, DPtableShowF, DPcellMine }) => {

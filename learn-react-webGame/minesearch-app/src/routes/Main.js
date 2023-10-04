@@ -1,5 +1,5 @@
 import React from 'react';
-import Minesearch from '../components/Minesearch';
+import Minesearch from 'components/Minesearch';
 
 const Main = () => {
   return (

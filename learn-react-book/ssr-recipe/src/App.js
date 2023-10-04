@@ -1,12 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import { Routes, Route } from '../node_modules/react-router-dom/dist/index';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { ReactDOM } from 'react';
+import Main 
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <App/>
+);
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<></>}/>
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

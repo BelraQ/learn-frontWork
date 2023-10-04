@@ -1,4 +1,4 @@
-import CODE from "./minecode";
+import CODE from "utils/minecode";
 
 const plantMine = (row, cell, mine) => {
   console.log(row, cell, mine);

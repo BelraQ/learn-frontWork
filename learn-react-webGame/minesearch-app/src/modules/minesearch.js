@@ -1,5 +1,5 @@
-import plantMine from '../utils/plantMine';
-import CODE from '../utils/minecode';
+import plantMine from 'utils/plantMine';
+import CODE from 'utils/minecode';
 import { produce } from 'immer';
 import { createAction, handleActions } from 'redux-actions';
 

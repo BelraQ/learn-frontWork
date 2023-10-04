@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
-import GameBody from '../../components/GameBody';
-import { useSelector } from '../../../node_modules/react-redux/es/exports';
+import GameBody from 'components/GameBody';
+import { useSelector } from 'react-redux';
 import {
   clickMine,
   flagCell,
@@ -8,8 +8,8 @@ import {
   openCell,
   questCell,
   tableShowF,
-} from '../../modules/minesearch';
-import useActions from '../../lib/useActions';
+} from 'modules/minesearch';
+import useActions from 'lib/useActions';
 
 const GameBodyContainer = memo(() => {
   const state = useSelector(({ minesearch }) => ({

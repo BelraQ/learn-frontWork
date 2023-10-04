@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import minesearch from './minesearch';
+import minesearch from 'modules/minesearch';
 
 const rootReducer = combineReducers({
   minesearch,

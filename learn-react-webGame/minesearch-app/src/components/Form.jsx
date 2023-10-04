@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, memo } from 'react';
-import useInputs from '../lib/useInputs';
-import '../styles/Form.scss';
+import useInputs from 'lib/useInputs';
+import 'styles/Form.scss';
 
 const Form = memo(({DPstartGame}) => {
 

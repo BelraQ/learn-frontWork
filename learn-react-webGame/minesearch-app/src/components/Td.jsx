@@ -3,7 +3,7 @@ import React, {
   useCallback,
 } from 'react';
 import styled from 'styled-components';
-import CODE from '../utils/minecode';
+import CODE from 'utils/minecode';
 
 const MineTd = styled.td`
   background-color: ${(props) => props.$backgroundColor};

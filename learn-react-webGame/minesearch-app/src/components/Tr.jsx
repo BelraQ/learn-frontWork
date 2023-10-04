@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import Td from './Td';
+import Td from 'components/Td';
 
 const Tr = memo(({ rowIndex, tableData, halted, DPcellMine }) => {
   return (

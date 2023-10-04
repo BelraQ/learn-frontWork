@@ -1,7 +1,7 @@
-import React, {useCallback, useContext, memo, useRef, useMemo} from 'react';
+import React, { useCallback, memo, useRef } from 'react';
 import { motion } from 'framer-motion';
-import Table from './Table';
-import '../styles/GameBody.scss';
+import Table from 'components/Table';
+import 'styles/GameBody.scss';
 
 
 const GameBody = memo(({DPtableShowF, DPcellMine, state}) => {

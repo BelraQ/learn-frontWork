@@ -1,5 +1,5 @@
-import React, { memo, useMemo} from 'react';
-import Form from './Form';
+import React, { memo } from 'react';
+import Form from 'components/Form';
 
 const Menu = memo(({timer, DPstartGame}) => {
 

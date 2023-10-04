@@ -1,7 +1,7 @@
-import React, {memo} from 'react';
-import '../styles/Template.scss';
-import MenuContainer from '../containers/minesearch/MenuContainer';
-import GameBodyContainer from '../containers/minesearch/GameBodyContainer';
+import React, { memo } from 'react';
+import 'styles/Template.scss';
+import MenuContainer from 'containers/minesearch/MenuContainer';
+import GameBodyContainer from 'containers/minesearch/GameBodyContainer';
 
 const Template = memo(() => {
   return (

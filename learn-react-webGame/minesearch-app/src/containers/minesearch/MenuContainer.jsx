@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
-import Menu from '../../components/Menu';
-import { startGame } from '../../modules/minesearch';
-import useActions from '../../lib/useActions';
+import Menu from 'components/Menu';
+import { startGame } from 'modules/minesearch';
+import useActions from 'lib/useActions';
 
 
 const MenuContainer = memo(() => {
